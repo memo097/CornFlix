@@ -76,6 +76,11 @@
       </li>
       
     </ul>
+    <div>
+      <!-- Place pour le panier -->
+    <button id="panierBtn" class="my-2 my-sm-0 panierBtn btn"><i class="fas fa-shopping-cart"></i></button> 
+    </div>
+   
     <?php if(isset($_SESSION['user_id'])){
       echo '<form id="search" action=""  method="Get" class="form-inline my-2 my-lg-0 ">
       <input  type="hidden" name="action" value="search">
@@ -90,7 +95,8 @@
       <a class="dropdown-item" href="./index.php?action=profil&id='.$_SESSION['user_id'].'">My profil</a>
       <a class="dropdown-item" href="./view/logout.php">Logout</a>
     </div>
-
+    
+    
   </div>';
     }else{
 echo '<div class="d-flex"><a href="./index.php?action=login" class="btn btn-nav col-sm-5">login</a>

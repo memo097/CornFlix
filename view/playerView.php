@@ -10,6 +10,9 @@ include('header.php');
 
 <!-- Comments -->
 <div class="container">
+    <!-- Place pour le panier -->
+<a class="searchBtn" href="https://www.google.com">acheter</a>
+<hr>
 <h2 >Commentaires</h2>
 <hr>
 <?php

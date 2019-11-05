@@ -25,7 +25,15 @@ body {
   border-radius: 5px;
   font-weight: bold;
 }
-
+.panierBtn {
+  height: 37px;
+  color: white;
+  background-color: #CC0501;
+  border: 1px solid #CC0501;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-right: 10px;
+}
 
 .submitBtn {
   color: white;
