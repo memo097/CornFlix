@@ -76,13 +76,16 @@
       </li>
       
     </ul>
-    <div>
-      <!-- Place pour le panier -->
-    <button id="panierBtn" class="my-2 my-sm-0 panierBtn btn"><i class="fas fa-shopping-cart"></i></button> 
-    </div>
+    
    
     <?php if(isset($_SESSION['user_id'])){
-      echo '<form id="search" action=""  method="Get" class="form-inline my-2 my-lg-0 ">
+      echo '<div>
+      <!-- Place pour le panier -->
+    <button type="button" class="panierBtn">
+      <a href="./index.php?action=cart"></i><span class="badge badge-light fas fa-shopping-cart">0</span></a>
+    </button>
+    </div>
+      <form id="search" action=""  method="Get" class="form-inline my-2 my-lg-0 ">
       <input  type="hidden" name="action" value="search">
       <input id="searchBox" class="search form-control mr-sm-2 text-center" name="query" type="search" placeholder="Search" aria-label="Search">
       <button id="searchBtn" class="my-2 my-sm-0 searchBtn btn" type="submit">Search</button>

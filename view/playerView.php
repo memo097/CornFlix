@@ -1,3 +1,12 @@
+<?php 
+if(empty($_SESSION['panier'])){
+    $_SESSION['panier'] = array($_GET['id']);
+}else{
+    array_push($_SESSION['panier'], $_GET['id']);
+}
+
+
+?>
 <?php
 $title = 'Player';
 include('header.php');
@@ -11,7 +20,10 @@ include('header.php');
 <!-- Comments -->
 <div class="container">
     <!-- Place pour le panier -->
-<a class="searchBtn" href="https://www.google.com">acheter</a>
+<form action="" method="GET">
+
+<button class="panierBtn" type="submit" name="id">acheter</button>
+</form>
 <hr>
 <h2 >Commentaires</h2>
 <hr>
@@ -44,37 +56,6 @@ while ($data = $comments->fetch())
     </div>
 </form>
 </div>
-
-
-
-
-<script>
-let movieId = '<?=$_GET['id']?>'
-console.log(movieId)
-fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=a85ec5f726223d34a1135bd216c3bd56&language=en-US`)
-    .then(response => response.json())
-    .then(data=> {
-      showTrailer(data.results)
-      document.getElementById("title").innerHTML = data.results[0].name
-    })
-    function showTrailer(movie){
-        console.log(movie[0].name)
-        document.getElementById("player").innerHTML += `<iframe width="100%" height="600px" src="http://www.youtube.com/embed/${movie[0].key}"frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
-        
-    }
-
-    /*fetch(`https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=a85ec5f726223d34a1135bd216c3bd56&language=en-US&page=1`)
-        .then(response => response.json())
-        .then(data =>{
-            console.log(data)
-            showComments(data.results)
-        })
-    function showComments(comment){
-        document.getElementById("user").innerHTML += `<h3>${comment[1].author}</h3>`
-        document.getElementById("commen").innerHTML += `<p>${comment[1].content}</p>`
-    }*/
-</script>
-
 <?php
 include('footer.php')
 ?>
