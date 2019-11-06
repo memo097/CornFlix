@@ -9,7 +9,6 @@ var_dump($_SESSION['panier']);
 
 
 
-
 <script>
 let movieId = '<?=$_GET['id']?>'
 console.log(movieId)
