@@ -20,10 +20,7 @@ include('header.php');
 <!-- Comments -->
 <div class="container">
     <!-- Place pour le panier -->
-<form action="" method="GET">
-
-<button class="panierBtn" type="submit" name="id">acheter</button>
-</form>
+<button class="panierBtn" type="submit" name="id">Ajouter au panier</button>
 <hr>
 <h2 >Commentaires</h2>
 <hr>
@@ -85,6 +82,26 @@ fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=a85ec5f72622
         document.getElementById("user").innerHTML += `<h3>${comment[1].author}</h3>`
         document.getElementById("commen").innerHTML += `<p>${comment[1].content}</p>`
     }*/
+    const ajout = document.querySelector('.panierBtn');
+    const commandlist = document.querySelector('#commandlist');
+    ajout.onclick = function(){
+        fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=b53ba6ff46235039543d199b7fdebd90&language=en-US`)
+        .then(response => response.json())
+        .then(data=> {
+        showPic(data)
+    })
+    }
+    
+
+    function showPic(data){
+        const li = document.createElement('li')
+        const img = document.createElement('img')
+        img.src = 'https://image.tmdb.org/t/p/w200/'+data.poster_path;
+        commandlist.appendChild(li)
+        li.appendChild(img)
+        li.innerHTML += 'string'
+    }
+
 </script>
 
 <?php

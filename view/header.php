@@ -74,16 +74,30 @@
          
         </div>
       </li>
+      <!-- Place pour le panier -->
+      <li>
+      <div class="box">
+      <a class="button" href="#popup1">Let me Pop up</a>
+      </div>
       
+      <div id="popup1" class="overlay">
+      <div class="popup">
+      <h2>Here i am</h2>
+      <a class="close" href="#">×</a>
+      <div class="content">
+      <ul id="commandlist">
+        
+
+      </ul>
+      </div>
+      </div>
+      </div>
+      </li>
     </ul>
     
    
     <?php if(isset($_SESSION['user_id'])){
       echo '<div>
-      <!-- Place pour le panier -->
-    <button type="button" class="panierBtn">
-      <a href="./index.php?action=cart"></i><span class="badge badge-light fas fa-shopping-cart">0</span></a>
-    </button>
     </div>
       <form id="search" action=""  method="Get" class="form-inline my-2 my-lg-0 ">
       <input  type="hidden" name="action" value="search">
