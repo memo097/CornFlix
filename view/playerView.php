@@ -106,12 +106,18 @@ fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=a85ec5f72622
     function showPic(data){
         const li = document.createElement('li')
         const img = document.createElement('img')
+        const quantite = document.createElement('input')
         const buttons = document.createElement('button')
+        quantite.setAttribute("type","number")
+        quantite.setAttribute("class","qt")
+        quantite.setAttribute("min","1")
+        quantite.setAttribute("max","10")
+        buttons.setAttribute("class","btn btn-danger fa fa-trash")
         img.src = 'https://image.tmdb.org/t/p/w200/'+data.poster_path;
         commandlist.appendChild(li)
         li.appendChild(img)
+        li.appendChild(quantite)
         li.appendChild(buttons)
-        buttons.innerHTML = 'Delete';
     }
 
 </script>
