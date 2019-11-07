@@ -120,6 +120,7 @@ ery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5s
           <li id="image<?=$i?>"></li>
           <li id="1"><?=$row['prix'];?></li>
           <li id="2"><?=$row['quantiter'];?></li>
+          
          <?php $i++;
         }
         ?>
@@ -135,11 +136,13 @@ ery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5s
             <input type="text" name="pays" placeholder="Pays" required>
             <p>ECHO EN PHP FRAIS DE LIVRAISON POUR LE PAYS</p>
             <p>Prix total a récuperer</p>
+            <input type="text" name="promo" placeholder="Code Promo">
             <div class="facture">
-              <input type="text" name="promo" placeholder="Code Promo">
               <button class="btn btn-danger" type="submit">Procéder au paiement</button>
-            </div>
           </form>
+        
+          <a href="./model/deleteall.php"class="fa fa-trash btn btn-danger"></a>
+            </div>
         </div>
       </div>
       </div>

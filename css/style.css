@@ -259,3 +259,7 @@ img {
   margin-right: 5px;
   width: 40px;
 }
+.facture{
+  display: flex;
+  flex-direction: row;
+}
