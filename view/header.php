@@ -77,18 +77,19 @@
       <!-- Place pour le panier -->
       <li>
       <div class="box">
-      <a class="button" href="#popup1">Let me Pop up</a>
+      <a class="btn btn-danger" href="#popup1"><i class="fas fa-shopping-cart"><span class="badge badge-light">0</span></i></a>
       </div>
       
       <div id="popup1" class="overlay">
       <div class="popup">
-      <h2>Here i am</h2>
+      <h2>Your shopping cart contains: </h2>
       <a class="close" href="#">×</a>
       <div class="content">
       <ul id="commandlist">
-        
+        <!-- ORDERED ITEMS APPEAR HERE -->
 
       </ul>
+      <button class="btn btn-danger" style="margin-top:10px">Proceed to payment</button>
       </div>
       </div>
       </div>

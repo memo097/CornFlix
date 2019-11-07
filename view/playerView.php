@@ -21,6 +21,16 @@ include('header.php');
 <div class="container">
     <!-- Place pour le panier -->
 <button class="panierBtn" type="submit" name="id">Ajouter au panier</button>
+
+<!-- Envoie vers DB -->
+<?php 
+    $db = new PDO('mysql:host=localhost;dbname=a70j0_bdd_ehanon', 'root', ''); 
+    $pdoStat = $db->prepare('INSERT INTO shoppingcart VALUES (NULL, :id_user, :id_movie)');
+    $pdoStat -> bindValue(':id_user', $_SESSION['user_id'], PDO::PARAM_STR);
+    $pdoStat -> bindValue(':id_movie', $_GET['id'], PDO::PARAM_STR);
+    $insertIsOk = $pdoStat->execute();
+?>
+
 <hr>
 <h2 >Commentaires</h2>
 <hr>
@@ -96,10 +106,11 @@ fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=a85ec5f72622
     function showPic(data){
         const li = document.createElement('li')
         const img = document.createElement('img')
+/*         const button = document.createElement('button') */
         img.src = 'https://image.tmdb.org/t/p/w200/'+data.poster_path;
         commandlist.appendChild(li)
         li.appendChild(img)
-        li.innerHTML += 'string'
+        li.innerHTML += 'price: $10';
     }
 
 </script>

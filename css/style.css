@@ -171,6 +171,7 @@ hr {
   color:white;
 }
 
+/* POPUP */
 .overlay {
 position: fixed;
 top: 0;
@@ -190,9 +191,9 @@ opacity: 1;
 .popup {
 margin: 70px auto;
 padding: 20px;
-background: blue;
+background: rgb(197, 195, 195);
 border-radius: 5px;
-width: 30%;
+width: 70%;
 position: relative;
 transition: all 5s ease-in-out;
 }
@@ -201,6 +202,12 @@ transition: all 5s ease-in-out;
 margin-top: 0;
 color: #333;
 font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup ul {
+padding: 10px !important;
+display: flex;
+flex-direction: row;
 }
 .popup .close {
 position: absolute;
@@ -213,7 +220,7 @@ text-decoration: none;
 color: #333;
 }
 .popup .close:hover {
-color: #06D85F;
+color: red;
 }
 .popup .content {
 max-height: 30%;
