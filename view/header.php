@@ -82,14 +82,30 @@
       
       <div id="popup1" class="overlay">
       <div class="popup">
-      <h2>Your shopping cart contains: </h2>
       <a class="close" href="#">×</a>
       <div class="content">
-      <ul id="commandlist">
+        <div class="panier">
+          <ul id="commandlist">
         <!-- ORDERED ITEMS APPEAR HERE -->
 
-      </ul>
-      <button class="btn btn-danger" style="margin-top:10px">Proceed to payment</button>
+          </ul>
+        </div> <!--fin div panier -->
+        <div class="achat">
+          <form method="POST">
+            <p>Bonjour NOM ET PRENOM</p>
+            <p>ADRESSE EMAIL</p>
+            <input type="text" name="adresse" placeholder="Adresse" required>
+            <input type="text" name="code_postal" placeholder="Code Postal" required>
+            <input type="text" name="ville" placeholder="Ville" required>
+            <input type="text" name="pays" placeholder="Pays" required>
+            <p>ECHO EN PHP FRAIS DE LIVRAISON POUR LE PAYS</p>
+            <p>Prix total a récuperer</p>
+            <div class="facture">
+              <input type="text" name="promo" placeholder="Code Promo">
+              <button class="btn btn-danger" type="submit">Procéder au paiement</button>
+            </div>
+          </form>
+        </div>
       </div>
       </div>
       </div>

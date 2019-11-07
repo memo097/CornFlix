@@ -106,11 +106,12 @@ fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=a85ec5f72622
     function showPic(data){
         const li = document.createElement('li')
         const img = document.createElement('img')
-/*         const button = document.createElement('button') */
+        const buttons = document.createElement('button')
         img.src = 'https://image.tmdb.org/t/p/w200/'+data.poster_path;
         commandlist.appendChild(li)
         li.appendChild(img)
-        li.innerHTML += 'price: $10';
+        li.appendChild(buttons)
+        buttons.innerHTML = 'Delete';
     }
 
 </script>
