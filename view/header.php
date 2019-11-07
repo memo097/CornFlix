@@ -120,6 +120,7 @@ ery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5s
           <li id="image<?=$i?>"></li>
           <li id="1"><?=$row['prix'];?></li>
           <li id="2"><?=$row['quantiter'];?></li>
+          <li><a href="./view/deleteitem.php?id=<?= $row['id_movie'];?>">delete</a></li>
          <?php $i++;
         }
         ?>
