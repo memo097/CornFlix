@@ -1,10 +1,23 @@
 <?php 
-if(empty($_SESSION['panier'])){
-    $_SESSION['panier'] = array($_GET['id']);
-}else{
-    array_push($_SESSION['panier'], $_GET['id']);
-}
-
+    if(isset($_POST['id'])){
+        $db = new PDO('mysql:host=localhost;dbname=a70j0_bdd_ehanon', 'root', ''); 
+        $pdoStat = $db->prepare('INSERT INTO shoppingcart VALUES (NULL, :id_user, :id_movie, :prix, :quantiter)');
+        $pdoStat -> bindValue(':id_user', $_SESSION['user_id'], PDO::PARAM_STR);
+        $pdoStat -> bindValue(':id_movie', $_GET['id'], PDO::PARAM_STR);
+        $pdoStat -> bindValue(':prix', $_GET['id'], PDO::PARAM_STR);
+        $pdoStat -> bindValue(':quantiter', $_GET['id'], PDO::PARAM_STR);
+        $insertIsOk = $pdoStat->execute();
+       
+        
+    }
+    ?>
+<?php 
+// if(empty($_SESSION['panier'])){
+//     $_SESSION['panier'] = array($_GET['id']);
+// }else{
+//     array_push($_SESSION['panier'], $_GET['id']);
+// }
+// var_dump($_SESSION['panier']);
 
 ?>
 <?php
@@ -20,17 +33,9 @@ include('header.php');
 <!-- Comments -->
 <div class="container">
     <!-- Place pour le panier -->
+<form action="" method="POST">
 <button class="panierBtn" type="submit" name="id">Ajouter au panier</button>
-
-<!-- Envoie vers DB -->
-<?php 
-    $db = new PDO('mysql:host=localhost;dbname=a70j0_bdd_ehanon', 'root', ''); 
-    $pdoStat = $db->prepare('INSERT INTO shoppingcart VALUES (NULL, :id_user, :id_movie)');
-    $pdoStat -> bindValue(':id_user', $_SESSION['user_id'], PDO::PARAM_STR);
-    $pdoStat -> bindValue(':id_movie', $_GET['id'], PDO::PARAM_STR);
-    $insertIsOk = $pdoStat->execute();
-?>
-
+</form>
 <hr>
 <h2 >Commentaires</h2>
 <hr>
@@ -92,34 +97,7 @@ fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=a85ec5f72622
         document.getElementById("user").innerHTML += `<h3>${comment[1].author}</h3>`
         document.getElementById("commen").innerHTML += `<p>${comment[1].content}</p>`
     }*/
-    const ajout = document.querySelector('.panierBtn');
-    const commandlist = document.querySelector('#commandlist');
-    ajout.onclick = function(){
-        fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=b53ba6ff46235039543d199b7fdebd90&language=en-US`)
-        .then(response => response.json())
-        .then(data=> {
-        showPic(data)
-    })
-    }
-    
-
-    function showPic(data){
-        const li = document.createElement('li')
-        const img = document.createElement('img')
-        const quantite = document.createElement('input')
-        const buttons = document.createElement('button')
-        quantite.setAttribute("type","number")
-        quantite.setAttribute("class","qt")
-        quantite.setAttribute("min","1")
-        quantite.setAttribute("max","10")
-        buttons.setAttribute("class","btn btn-danger fa fa-trash")
-        img.src = 'https://image.tmdb.org/t/p/w200/'+data.poster_path;
-        commandlist.appendChild(li)
-        li.appendChild(img)
-        li.appendChild(quantite)
-        li.appendChild(buttons)
-    }
-
+  
 </script>
 
 <?php
