@@ -96,9 +96,7 @@ ery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5s
       </li>
       <!-- Place pour le panier -->
       <li>
-      <div class="box">
-      <a class="btn btn-danger" href="#popup1"><i class="fas fa-shopping-cart"><span class="badge badge-light">0</span></i></a>
-      </div>
+      
       
       <div id="popup1" class="overlay">
       <div class="popup">
@@ -131,7 +129,7 @@ ery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5s
           </ul>
         </div> <!--fin div panier -->
         <div class="achat">
-            <p>Bonjour NOM ET PRENOM</p>
+            <p>Bonjour Nom Prenom</p>
             <p>ADRESSE EMAIL</p>
             <input type="text" name="adresse" placeholder="Adresse" required>
             <input type="text" name="code_postal" placeholder="Code Postal" required>
@@ -165,6 +163,9 @@ ery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5s
       <input id="searchBox" class="search form-control mr-sm-2 text-center" name="query" type="search" placeholder="Search" aria-label="Search">
       <button id="searchBtn" class="my-2 my-sm-0 searchBtn btn" type="submit">Search</button>
     </form>
+    <div class="box">
+      <a class="btn btn-danger" href="#popup1"><i class="fas fa-shopping-cart"><span class="badge badge-light"></span></i></a>
+      </div>
 
     <div class="dropdown d-flex justify-content-center">
      <button style="color:grey;" type="button" class="btn  dropdown-toggle col-md-1" data-toggle="dropdown" ><i class="fas fa-user fa-2x" ></i></a>

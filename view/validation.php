@@ -53,14 +53,16 @@ if($_POST['promo'] != 'MikeEstTropCool') {
         $prixfinal = $prixCode;
     }
 }?>
+<div class="containerprix">
     <div class="boxprixfinal">
-        <p>Vous avez validé votre commande de <?= $qty ?> articles</p><br>
+        <p>Vous avez validé votre commande de <?= $qty ?> articles</p>
         <p>Le prix total est de <?= $prixfinal ?> €<p>
         <p>Vous pouvez passer au paiement ci-dessous</p>
     </div>
-    <!-- SMART Payment buttons -->
-    <script src="https://www.paypal.com/sdk/js?client-id=sb"></script>
-    <script>paypal.Buttons().render('body');</script>
+    <div class="btn btn-danger buttonpaypal">
+        <a href="https://www.paypal.com/fr/home">Paiement</a>
+    </div>
+</div>
 
 <?php
 include("footer.php");

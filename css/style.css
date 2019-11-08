@@ -266,3 +266,13 @@ img {
 #frais {
   font-size: 10px;
 }
+.containerprix{
+  text-align: center;
+  background-color: #2e0500;
+  width: 50%;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 3%;
+  padding: 2%;
+  border: solid 2px white;
+}
