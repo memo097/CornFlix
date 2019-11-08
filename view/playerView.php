@@ -4,8 +4,8 @@
         $pdoStat = $db->prepare('INSERT INTO shoppingcart VALUES (NULL, :id_user, :id_movie, :prix, :quantiter)');
         $pdoStat -> bindValue(':id_user', $_SESSION['user_id'], PDO::PARAM_STR);
         $pdoStat -> bindValue(':id_movie', $_GET['id'], PDO::PARAM_STR);
-        $pdoStat -> bindValue(':prix', $_GET['id'], PDO::PARAM_STR);
-        $pdoStat -> bindValue(':quantiter', $_GET['id'], PDO::PARAM_STR);
+        $pdoStat -> bindValue(':prix', "10", PDO::PARAM_STR);
+        $pdoStat -> bindValue(':quantiter', $_POST['quantiter'], PDO::PARAM_STR);
         $insertIsOk = $pdoStat->execute();
        
         
@@ -34,6 +34,7 @@ include('header.php');
 <div class="container">
     <!-- Place pour le panier -->
 <form action="" method="POST">
+<input type="number" min="1" max="9" value="1" name="quantiter">
 <button class="panierBtn" type="submit" name="id">Ajouter au panier</button>
 </form>
 <hr>

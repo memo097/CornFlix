@@ -263,3 +263,6 @@ img {
   display: flex;
   flex-direction: row;
 }
+#frais {
+  font-size: 10px;
+}
