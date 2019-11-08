@@ -6,6 +6,8 @@
   $pdoStat = $db->query($sql);
   
   $result = $pdoStat->fetchAll();
+
+ 
  
 ?>
 <!DOCTYPE html>
@@ -108,7 +110,7 @@ ery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5s
             let id1 ='';
             var prix = 0;</script>
         <!-- ORDERED ITEMS APPEAR HERE --> 
-        <form action="validation.php"method="POST">
+        <form action="./index.php?action=validation"method="POST">
         <?php $i=0;
         foreach($result as $row){?>
         <script>
@@ -119,8 +121,8 @@ ery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5s
           </script>
           <li id="title<?=$i?>"></li>
           <li id="image<?=$i?>"></li>
-          <input id="prix"value="<?=$row['prix'];?>">
-          <input id="quantiter"value="<?=$row['quantiter'];?>">
+          <input name="prix<?=$i?>" id="prix"value="<?=$row['prix'];?>">
+          <input name ="quantiter" id="quantiter"value="<?=$row['quantiter'];?>">
           <a href="./view/deleteitem.php?id=<?= $row['id_movie'];?>">delete</a>
           
          <?php $i++;
@@ -134,7 +136,7 @@ ery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5s
             <input type="text" name="adresse" placeholder="Adresse" required>
             <input type="text" name="code_postal" placeholder="Code Postal" required>
             <input type="text" name="ville" placeholder="Ville" required><br>
-            <select name = "carlist"required>
+            <select name = "payslist" required>
               <option name = "Belgique" value = "0">Belgique</option>
               <option name = "Europe" value = "5">Europe</option>
               <option name = "Hors Europe" value = "10">Hors Europe</option>
@@ -143,7 +145,7 @@ ery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5s
             <?php
 
             ?>
-            <input type="text" name="promo" placeholder="Code Promo">
+            <input type="text" name="promo" value="" placeholder="Code Promo">
             <div class="facture">
               <button class="btn btn-danger" type="submit">Procéder au paiement</button>
           </form>
