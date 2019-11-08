@@ -142,12 +142,9 @@ ery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5s
               <option name = "Hors Europe" value = "10">Hors Europe</option>
             </select>
             <p id="frais">*Livraison: <br>Gratuit pour la Belgique <br>5€ pour l'Europe <br>10€ Hors Europe</p>
-            <?php
-
-            ?>
             <input type="text" name="promo" value="" placeholder="Code Promo">
             <div class="facture">
-              <button class="btn btn-danger" type="submit">Procéder au paiement</button>
+              <button class="btn btn-danger" type="submit">Valider votre commande</button>
           </form>
         
           <a href="./model/deleteall.php"class="fa fa-trash btn btn-danger"></a>
